@@ -1,2 +1,2 @@
-# one_cafe_serch
+# one_cafe_search
 ペット可の飲食店紹介
