@@ -1,14 +1,19 @@
 <div
   class="home"
-  style="background-image: url('<%= asset_path("00890c3c-0d85-41ec-9016-009e66bd483b.png") %>');">
+  style="background-image: url('<%= asset_path('00890c3c-0d85-41ec-9016-009e66bd483b.png') %>');">
 
+<div class="home-content">
 
 <h1>One_Cafe_Search</h1>
 
 <p>
-  このサイトはペットと一緒に過ごせる飲食店を紹介する掲示板です。
+  愛犬とのお出かけがもっと楽しくなるカフェ情報を紹介します。
+</p>
+<p>
+愛犬と一緒に楽しめるカフェを見つけて、特別な時間を過ごそう！
 </p>
 
-<%= link_to "飲食店一覧を見る", posts_path %>
+<%= link_to "カフェ探しを始めよう！", posts_path , class: "start-btn" %>
 
+ </div>
 </div>

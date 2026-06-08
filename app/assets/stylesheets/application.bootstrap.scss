@@ -15,11 +15,24 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 
+}
+.home-content{
+ //文字全体の配置
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
-  color: white;
+  align-items: flex-start;
+  padding-left: 40px;
+  //文字の色と配置
+  color: #2F5D50;
   text-align: center;
+}
+.home-content p {
+  margin-top: 50px;
+}
+
+.start-btn{
+display: inline-block;
+margin-top: 50px;
 }
