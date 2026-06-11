@@ -61,5 +61,3 @@ end
 #gem 'pg'
 
 gem "sqlite3"
-
-gem "sassc-rails"

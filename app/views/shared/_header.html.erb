@@ -1,7 +1,7 @@
 <header>
  <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
   <%= link_to '/', class: 'top-logo' do %>
-   <%= image_tag 'image_log.png' %>
+   <%= image_tag 'image_log.png' , style: 'width: 150px; height: 50px;' %>
     <% end %>
  
     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
@@ -13,23 +13,32 @@
       <ul class='navbar-nav ms-auto align-items-center'>
 
        <li class='nav-item dropdown'>
-        <%= link_to 'おすすめカフェ' , '#', class: 'nav-link dropdown-toggle', id: 'navbarDropdown', 
-          role: 'button', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } %>
+        <%= link_to 'おすすめカフェ' , '#', class: 'nav-link dropdown-toggle',  
+          role: 'button', data: { bs_toggle: 'dropdown' } %>
 
-         <div class='dropdown-menu dropdown-menu-end'>
+         <ul class='dropdown-menu dropdown-menu-end'>
+         <li>
           <%= link_to 'おすすめカフェ一覧', posts_path, class: 'dropdown-item' %>
+          </li>
+          <li>
           <%= link_to '新規カフェ登録', new_post_path, class: 'dropdown-item' %>
-         </div>
+          </li>
+         </ul>
       </li>
 
         <li class='nav-item dropdown dropdown-slide'>
-          <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
-        <% end %>
-         <div class='dropdown-menu dropdown-menu-end'>
-         <div class='dropdown-divider'></div>
+          <%= link_to '#', class: 'nav-link dropdown-toggle', data: { bs_toggle: 'dropdown' }, role: 'button' do %>
+           <%= image_tag 'prof-image.png' , class: 'rounded-circle', style: 'width: 40px; height: 40px;' %>
+          <% end %>
+         <ul class='dropdown-menu dropdown-menu-end'>
+           <li>
             <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
             <%= link_to 'ログアウト', '#', class: 'dropdown-item' %>
-         </div>
+            </li>
+         </ul>
         </li>
       </ul>
     </div>
