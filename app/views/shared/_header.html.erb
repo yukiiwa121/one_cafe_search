@@ -14,7 +14,7 @@
 
        <li class='nav-item dropdown'>
         <%= link_to 'おすすめカフェ' , '#', class: 'nav-link dropdown-toggle',  
-          role: 'button', data: { bs_toggle: 'dropdown' } %>
+          role: 'button', data: { bs_toggle: 'dropdown' , turbo: false } %>
 
          <ul class='dropdown-menu dropdown-menu-end'>
          <li>
@@ -27,7 +27,7 @@
       </li>
 
         <li class='nav-item dropdown dropdown-slide'>
-          <%= link_to '#', class: 'nav-link dropdown-toggle', data: { bs_toggle: 'dropdown' }, role: 'button' do %>
+          <%= link_to '#', class: 'nav-link dropdown-toggle', data: { bs_toggle: 'dropdown' , turbo: false }, role: 'button' do %>
            <%= image_tag 'prof-image.png' , class: 'rounded-circle', style: 'width: 40px; height: 40px;' %>
           <% end %>
          <ul class='dropdown-menu dropdown-menu-end'>
@@ -50,5 +50,3 @@
 
 
 
-
-</header>
