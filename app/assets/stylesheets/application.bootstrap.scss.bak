@@ -1,4 +1,4 @@
-//@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap';
 //@import 'bootstrap-icons/font/bootstrap-icons';
 html,
 body {
@@ -32,7 +32,14 @@ body {
   margin-top: 50px;
 }
 
+//カフェ探しを始めよう！のボタン
 .start-btn{
 display: inline-block;
 margin-top: 50px;
 }
+
+//headerの設定
+.navbar-nav{
+list-style: none;
+}
+

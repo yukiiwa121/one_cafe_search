@@ -7,12 +7,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <!-- CSS はここ -->
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application.css", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", defer: true %>
+
 
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
+  <% unless current_page?(root_path) %>
+   <%= render 'shared/header' %>
+  <% end %>
     <%= yield %>
   </body>
 </html>
