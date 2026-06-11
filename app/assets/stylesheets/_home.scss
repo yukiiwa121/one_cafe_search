@@ -1,0 +1,39 @@
+//@import 'bootstrap';
+//@import 'bootstrap-icons/font/bootstrap-icons';
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+.home-content{
+ //文字全体の配置
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 40px;
+  //文字の色と配置
+  color: #2F5D50;
+  text-align: center;
+}
+.home-content p {
+  margin-top: 50px;
+}
+
+//カフェ探しを始めよう！のボタン
+.start-btn{
+display: inline-block;
+margin-top: 50px;
+}
