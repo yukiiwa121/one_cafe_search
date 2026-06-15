@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :posts
+
+  resources :boards, only: %i[index]
   
 end
