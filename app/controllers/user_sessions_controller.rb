@@ -8,9 +8,10 @@ class UserSessionsController < ApplicationController
 
     if @user
         session[:user_id] = @user.id
-        redirect_to boards_path
+        redirect_to boards_path,success:'ログイン完了！'
     else
-        render :new
+        flash.now[:danger] ='ログインに失敗'
+        render :new,status: :unprocessable_entity
     end
  end
 
