@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :boards, only: %i[index]
-  
+  resources :users, only: %i[new create]
 end
