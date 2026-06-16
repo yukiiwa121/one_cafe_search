@@ -30,8 +30,8 @@
            <%= image_tag 'prof-image.png' , class: 'rounded-circle', style: 'width: 40px; height: 40px;' %>
           <% end %>
          <ul class='dropdown-menu dropdown-menu-end'>
-            <div class='dropdown-item'>aaa</div>
-            <div class='dropdown-divider'></div>
+            <div class='dropdown-item'></div>
+            <div class='dropdown-divider'><%= @current_user.full_name %></div>
            <li>
             <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
             </li>
