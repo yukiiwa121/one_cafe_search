@@ -1,7 +1,27 @@
 class BoardsController < ApplicationController
     
  def index
-    @boards = Board.includes(:user)
+    @boards = Board.includes(:user).order(created_at: :desc)
+ end
+
+ def new
+   @board = Board.new
+ end
+
+ def create
+   @board  = current_user.boards.build(board_params)
+   if @board.save
+      redirect_to boards_path,success:"新規登録完了！"
+   else
+     flash.now[:danger] = "登録できませんでした"
+     render :new,status: :unprocessable_entity
+   end
+ end
+
+ private
+
+ def board_params
+   params.require(:board).permit(:title, :body)
  end
 
 end
