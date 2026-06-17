@@ -1,8 +1,14 @@
 class User < ApplicationRecord
-   has_secure_password
-    validates :password, length: {minimum:5}, if: -> {new_record? || changes[:password_digest]}
-    validates :name,presence: true,length: {maximum:100}, uniqueness: true
-    validates :email,presence: true, uniqueness: true
+   has_secure_password validations: false
+
+    validates :password, 
+               presence: {message: "パスワードを入れてください"},
+               length: {minimum:5,too_short: "5文字以上で入力してください"},
+               if: -> {new_record? || changes[:password_digest]}
+    validates :name,presence: {message: "名前を入れてください"},
+               length: {maximum:100,too_long: "100文字以内で入力してください" }, 
+               uniqueness: { message: "すでに登録されています" }
+    validates :email,presence: {message: "メールアドレスを入れてください"}, uniqueness: { message: "すでに登録されています" }
 
     has_many :boards, dependent: :destroy
     
