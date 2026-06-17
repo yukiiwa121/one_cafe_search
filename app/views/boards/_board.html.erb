@@ -1,12 +1,36 @@
 <div class="col-sm-12 col-lg-4 mb-3">
               <div id="board-id-<%= board.id %>">
                 <div class="shop-card">
-                  <%= image_tag "shop-image.png", class: "shop-img-top", width: "200", height:"200" %>
+                  <%= image_tag "shop-image.png", class: "shop-img-top", width: "200", height:"100" %>
                   <div class="shop-body">
                     <div class="d-flex">
-                      <h4 class="shop-title">
+          <ul class="list-unstyled shop-list">
+    <!-- 店名-->
+                      <li class="shop-title">
                         <%= link_to board.title, '#' %>
-                      </h4>
+                      </li>
+   <!-- google-->
+                     <li>
+                      <%= link_to "Googleで検索",
+                         "https://www.google.com/search?q=#{CGI.escape(board.title)}",
+                          target: "_blank",rel: "noopener", class: "btn btn-outline-primary" %>
+                     </li>
+   <!-- 説明-->
+                          <li class="shop-text">
+                           <div class="fw-bold">ここがおすすめ！</div>
+                          <div><%= board.body %></div>
+                          </li>
+    <!--ユーザー名-->     
+                        <li>
+                         <i class="bi bi-person"></i>
+                         <%= board.user.name %>
+                        </li>
+    <!--作成日-->
+                        <li>
+                        <i class="bi bi-calendar"></i>
+                        <%= l board.created_at, format: :short %>
+                        </li>
+    <!--各種ボタン-->
                       <div class='ms-auto'>
                         <%= link_to '#', id: "button-edit-#{board.id}" do %>
                           <i class="bi bi-pencil-fill"></i>
@@ -16,11 +40,6 @@
                         <% end %>
                       </div>
                     </div>
-                    <ul class="shop-list-inline">
-                      <li><i class="bi bi-person"></i>テスト</li>
-                      <li><i class="bi bi-calendar"></i><%= l board.created_at, format: :short %></li>
-                    </ul>
-                    <p class="shop-text">ここがおすすめ！</p>
                   </div>
                 </div>
               </div>
