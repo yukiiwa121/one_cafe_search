@@ -12,6 +12,11 @@
          <%= f.label :body,'ここがおすすめ！(お店に行ったら注目して欲しいポイントを紹介してくだい！)' %>
          <%= f.text_area :body,class:"form-control",rows:"10" %>
         </div>
+        <div class="mb-3">
+          <%= f.label :board_image ,'お店の参考画像'%>
+          <%= f.file_field :board_image, class: "form-control", accept: 'image/*' %>
+          <%= f.hidden_field :board_image_cache %>
+        </div>
      <%= f.submit '登録', class:"btn btn-primary" %>
      <% end %>
    </div>
