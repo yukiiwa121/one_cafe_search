@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  resources :boards, only: %i[index new create]
+  resources :boards, only: %i[index new create show] do
+    resources :comments,only: %i[create edit destroy],shallow: true
+  end
+  
   resources :users, only: %i[new create]
   get'login',to:'user_sessions#new'
   post'login',to:'user_sessions#create'

@@ -7,7 +7,7 @@
           <ul class="list-unstyled shop-list">
     <!-- 店名-->
                       <li class="shop-title">
-                        <%= link_to board.title, '#' %>
+                        <%= link_to board.title, board_path(board) %>
                       </li>
    <!-- google-->
                      <li>
@@ -35,7 +35,7 @@
                         <%= link_to '#', id: "button-edit-#{board.id}" do %>
                           <i class="bi bi-pencil-fill"></i>
                         <% end %>
-                        <%= link_to '#', id: "button-delete-#{board.id}", method: :delete, data: {confirm: ''} do %>
+                        <%= link_to '#', method: :delete, data: {confirm: ''} do %>
                           <i class="bi bi-trash-fill"></i>
                         <% end %>
                       </div>

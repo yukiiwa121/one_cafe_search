@@ -11,5 +11,10 @@ class User < ApplicationRecord
     validates :email,presence: {message: "メールアドレスを入れてください"}, uniqueness: { message: "すでに登録されています" }
 
     has_many :boards, dependent: :destroy
-    
+
+    has_many :comment, dependent: :destroy
+       def own?(object)
+        id == object&.user_id
+       end
+
 end
