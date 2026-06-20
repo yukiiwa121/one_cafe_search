@@ -1,0 +1,51 @@
+<!-- ページ全体の要素-->
+ <div class="container pt-5">
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+
+<!-- カフェ情報-->
+      <h1>おすすめカフェ詳細</h1>
+      <article class="shop-card border p-3">
+        <div class="shop-body">
+          <div class="row">
+            <div class="col-md-3">
+              <%= image_tag @board.board_image_url,class: "shop-img-top", width: "200", height: "100" %>
+            </div>
+            <div class="col-md-9 text-end">
+              <h3 style="display: inline;"><%= @board.title %></h3>
+              <h4><%= link_to "Googleでお店を検索",
+                  "https://www.google.com/search?q=#{CGI.escape(@board.title)}",
+                  target: "_blank",rel: "noopener",class: "btn btn-outline-primary" %></h4>
+              <ul class="list-inline text-end">
+                <li class="list-inline-item"><%= "by #{@board.user.decorate.full_name}" %></li>
+                <li class="list-inline-item"><%= l @board.created_at, format: :long %></li>
+              </ul>
+              <div class='d-flex justify-content-end'>
+                <%= link_to "#", id: "button-edit-#{@board.id}" do %>
+                  <i class='bi bi-pencil-fill'></i>
+                <% end %>
+                <%= link_to "#", id: "button-delete-#{@board.id}", class: "ms-2" do %>
+                  <i class="bi bi-trash-fill"></i>
+                <% end %>
+              </div>
+              </div>
+            </div>
+            <p><%= simple_format(@board.body) %></p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+<!-- コメントエリア-->
+    <%= render'comments/form',comment: @comment, board:@board %>
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <table class="table">
+          <tbody id="table-comment">
+            <%= render @comments %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
