@@ -31,14 +31,16 @@
                         <%= l board.created_at, format: :short %>
                         </li>
     <!--各種ボタン-->
+                     <% if current_user.own?(board) %>
                       <div class='ms-auto'>
-                        <%= link_to '#', id: "button-edit-#{board.id}" do %>
+                        <%= link_to edit_board_path(board), id: "button-edit-#{board.id}" do %>
                           <i class="bi bi-pencil-fill"></i>
                         <% end %>
-                        <%= link_to '#', method: :delete, data: {confirm: ''} do %>
+                        <%= link_to board_path(board), data: {turbo_method: :delete, turbo_confirm: '削除しますか？'} do %>
                           <i class="bi bi-trash-fill"></i>
                         <% end %>
                       </div>
+                    <% end %>
                     </div>
                   </div>
                 </div>
