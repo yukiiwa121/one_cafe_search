@@ -13,16 +13,21 @@
     
   </head>
 
-  <body class="<%= controller_name %> <%= action_name %>">
-  <% unless current_page?(root_path) %>
-  <% if logged_in? %>
-   <%= render 'shared/header' %>
-  <% else %>
-   <%= render 'shared/before_login_header' %>
-  <% end %>
-  <% end %>
-  <%= render 'shared/flash_message' %>
+  <body class="<%= controller_name %> <%= action_name %>"
+        style="background-image: url('<%= asset_path("second_page.png") %>');
+               background-size: cover;
+               background-attachment: fixed; ">
 
-    <%= yield %>
+     <% unless current_page?(root_path) %>
+      <% if logged_in? %>
+        <%= render 'shared/header' %>
+      <% else %>
+        <%= render 'shared/before_login_header' %>
+      <% end %>
+     <% end %>
+
+     <%= render 'shared/flash_message' %>
+
+     <%= yield %>
   </body>
 </html>
