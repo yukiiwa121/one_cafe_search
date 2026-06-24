@@ -7,16 +7,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", type: "module" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
   </head>
 
-  <body class="<%= controller_name %> <%= action_name %>"
-        style="background-image: url('<%= asset_path("second_page.png") %>');
-               background-size: cover;
-               background-attachment: fixed; ">
+  <body class="<%= controller_name %> <%= action_name %>">
+        
 
      <% unless current_page?(root_path) %>
       <% if logged_in? %>

@@ -16,7 +16,9 @@
     <div class="col-12">
       <div class="row">
         <% if @boards.present? %>
-          <%= render @boards %>
+          <% @boards.each do |board| %>
+             <%= render partial: "board", locals: { board: board } %>
+             <% end %>
             <!--アンダーボードに記載 -->
         <% else %>
           <div class="mb-3">おすすめのお店がありません</div>

@@ -3,8 +3,8 @@
                 <div class="shop-card">
                   <%= image_tag board.board_image_url, class: "shop-img-top", width: "200", height:"100" %>
                   <div class="shop-body">
-                    <div class="d-flex">
-          <ul class="list-unstyled shop-list">
+                    <div class="d-flex justify-content-between align-items-start w-100">
+                <ul class="list-unstyled shop-list mb-0">
     <!-- 店名-->
                       <li class="shop-title">
                         <%= link_to board.title, board_path(board) %>
@@ -16,33 +16,38 @@
                           target: "_blank",rel: "noopener", class: "btn btn-outline-primary" %>
                      </li>
    <!-- 説明-->
-                          <li class="shop-text">
-                           <div class="fw-bold">ここがおすすめ！</div>
-                          <div><%= board.body %></div>
-                          </li>
+                     <li class="shop-text">
+                        <div class="fw-bold">ここがおすすめ！</div>
+                        <div><%= board.body %></div>
+                     </li>
     <!--ユーザー名-->     
-                        <li>
-                         <i class="bi bi-person"></i>
+                      <li>
+                        <i class="bi bi-person"></i>
                          <%= board.user.name %>
-                        </li>
+                      </li>
     <!--作成日-->
-                        <li>
+                      <li>
                         <i class="bi bi-calendar"></i>
                         <%= l board.created_at, format: :short %>
-                        </li>
+                      </li>
     <!--各種ボタン-->
-                     <% if current_user.own?(board) %>
-                      <div class='ms-auto'>
+                     <% if board.user_id == current_user&.id %>
+                       <div class='d-flex gap-2'>
                         <%= link_to edit_board_path(board), id: "button-edit-#{board.id}" do %>
                           <i class="bi bi-pencil-fill"></i>
                         <% end %>
-                        <%= button_to "削除", board_path(board), method: :delete %>
+
+                        <%= link_to board_path(board),
+                             data: { turbo_method: :delete, turbo_confirm: "削除しますか？" },id: "button-delete-#{board.id}" do %>
                           <i class="bi bi-trash-fill"></i>
-                        
+                        <% end %>
                       </div>
-                    <% end %>
+                     <% end %>
+                    </ul>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            
+          

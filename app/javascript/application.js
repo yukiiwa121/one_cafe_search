@@ -1,5 +1,5 @@
 // Entry point for the build script in your package.json
-import "@hotwired/turbo-rails"
+import "@hotwired/turbo"
 import "./controllers"
 import * as bootstrap from "bootstrap"
 
@@ -11,4 +11,7 @@ function removeFlash() {
   })
 }
 
-document.addEventListener("turbo:load", removeFlash);
+
+document.addEventListener("turbo:before-fetch-request", (e) => {
+  console.log("before-fetch-request", e.detail);
+});
