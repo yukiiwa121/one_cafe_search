@@ -1,5 +1,6 @@
-//@import 'bootstrap';
-//@import 'bootstrap-icons/font/bootstrap-icons';
+/*@import 'bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';*/
+
 html,
 body {
   margin: 0;
@@ -17,14 +18,14 @@ body {
 
 }
 .home-content{
- //文字全体の配置
+ /*文字全体の配置*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding-left: 40px;
-  //文字の色と配置
+  /*文字の色と配置*/
   color: #2F5D50;
   text-align: center;
 }
@@ -32,14 +33,13 @@ body {
   margin-top: 50px;
 }
 
-//カフェ探しを始めよう！のボタン
+/*カフェ探しを始めよう！のボタン*/
 .start-btn{
 display: inline-block;
 margin-top: 50px;
 }
 
-//トップページ背景
+/*トップページ背景*/
 body.home.index {
-  background-image: url("00890c3c-0d85-41ec-9016-009e66bd483b.png");
+  background-image: url("../images/00890c3c-0d85-41ec-9016-009e66bd483b.png");
 }
-
