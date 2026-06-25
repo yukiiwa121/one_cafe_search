@@ -1,0 +1,23 @@
+/*headerの設定*/
+.navbar-nav{
+list-style: none;
+}
+
+.glass-header .navbar {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+header {
+  position: relative;
+  z-index: 400;
+}
+
+.container {
+  margin-top: 40px; /* ヘッダー分の余白 */
+}
+
+.container {
+  max-width: 1140px !important;
+}
