@@ -13,11 +13,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-     board = Board.find(params[:board_id])
-     comment = board.comments.find(params[:id])
-
+     comment = Comment.find(params[:id])
+     
      comment.destroy!
-     redirect_to board_path(board),success:'削除しました',status: :see_other
+     redirect_to board_path(comment.board),success:'削除しました',status: :see_other
   end
 
   private
