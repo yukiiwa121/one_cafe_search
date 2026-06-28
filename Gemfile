@@ -62,9 +62,11 @@ end
 
 gem "sqlite3"
 
-gem "dartsass-rails", "~> 0.5.1"
+#gem "dartsass-rails", "~> 0.5.1"
 
 gem 'draper','4.0.2'
 
 gem 'carrierwave','2.2.2'
 
+
+gem "propshaft", "~> 1.3"

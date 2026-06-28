@@ -3,8 +3,8 @@
 list-style: none;
 }
 
-.glass-header .navbar {
-  background: rgba(255, 255, 255, 0.15);
+header.glass-header nav.navbar {
+  background: rgba(255, 255, 255, 0.15) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
