@@ -5,14 +5,15 @@
 
 <!-- カフェ情報-->
       <h1>おすすめカフェ詳細</h1>
-      <article class="shop-card border p-3">
+      <article class="shop-card shop-card-detail border p-3">
         <div class="shop-body">
           <div class="row">
             <div class="col-md-3">
               <%= image_tag @board.board_image.url,class: "shop-img-top", width: "200", height: "100" %>
             </div>
+
             <div class="col-md-9 text-end">
-              <h3 style="display: inline;"><%= @board.title %></h3>
+              <h3 style="width:500px; "><%= @board.title %></h3>
               <h4><%= link_to "Googleでお店を検索",
                   "https://www.google.com/search?q=#{CGI.escape(@board.title)}",
                   target: "_blank",rel: "noopener",class: "btn btn-outline-primary" %></h4>
@@ -33,13 +34,16 @@
                 </div>
               <% end %>
               </div>
-              </div>
+            
+            <div class="shop-text">
+             <%= simple_format(@board.body) %>
             </div>
-            <p><%= simple_format(@board.body) %></p>
           </div>
         </article>
       </div>
-    </div>
+      </div>
+      </div>
+    
 
 <!-- コメントエリア-->
     <%= render'comments/form',comment: @comment, board:@board %>
