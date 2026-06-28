@@ -66,7 +66,7 @@ gem "sqlite3"
 
 gem 'draper','4.0.2'
 
-gem 'carrierwave','2.2.2'
+gem 'carrierwave','3.1.3'
 
 
 gem "propshaft", "~> 1.3"
