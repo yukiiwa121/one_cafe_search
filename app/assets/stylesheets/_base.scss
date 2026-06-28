@@ -8,15 +8,16 @@ body {
 .shop-body {
   display: flex;
   flex-direction: column;
+  
 }
 
 .shop-card {
   width: 100%;
-  height: 300px;
+  height: auto;
+  overflow: visible;
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 14px;
   background: #fff7ed;
-  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
@@ -35,5 +36,13 @@ body {
 }
 
 .shop-text {
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.col-md-9 {
+  min-width: 0;
+}
+
+h3 {
+  word-break: break-all;
 }
