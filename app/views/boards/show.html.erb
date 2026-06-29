@@ -1,4 +1,5 @@
 <!-- ページ全体の要素-->
+<% content_for(:title, 'おすすめカフェ詳細') %>
  <div class="container pt-5">
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
@@ -29,7 +30,7 @@
 
                 <%= link_to board_path(@board), data: {turbo_method: :delete, turbo_confirm: "削除しますか？" } ,
                     id: "button-delete-#{@board.id}" do %>
-                 <i class="bi bi-trash-fill"></i> o
+                 <i class="bi bi-trash-fill"></i> 
                 <% end %>
                 </div>
               <% end %>
