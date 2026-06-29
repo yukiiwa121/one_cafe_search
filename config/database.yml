@@ -1,13 +1,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-production:
-  adapter: postgresql
-  encoding: unicode
   pool: 5
-  url: <%= ENV["DATABASE_URL"] %>
+
+development:
+  <<: *default
+  database: one_cafe_search_development
 
 test:
   <<: *default
