@@ -58,9 +58,9 @@ group :test do
   gem "selenium-webdriver"
 end
 
-#gem 'pg'
+gem 'pg'
 
-gem "sqlite3"
+#gem "sqlite3"
 
 #gem "dartsass-rails", "~> 0.5.1"
 

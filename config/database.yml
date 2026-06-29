@@ -1,15 +1,18 @@
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-development:
-  <<: *default
-  database: db/development.sqlite3
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: <%= ENV["DATABASE_URL"] %>
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: one_cafe_search_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  url: <%= ENV["DATABASE_URL"] %>

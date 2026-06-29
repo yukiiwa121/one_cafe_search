@@ -10,11 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_20_040658) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_20_022703) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "boards", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "board_image"
@@ -22,11 +25,11 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_20_040658) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "board_id"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "board_id", null: false
-    t.text "body"
-    t.integer "user_id", null: false
     t.index ["board_id"], name: "index_comments_on_board_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
