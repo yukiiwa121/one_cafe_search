@@ -10,6 +10,7 @@ require "action_view/railtie"
 require "action_mailer/railtie"
 require "active_job/railtie"
 require "active_storage/engine"
+require "action_cable/engine"
 # sprocketsを完全無効化
 # require "sprockets/railtie" ← もしあれば削除
 
