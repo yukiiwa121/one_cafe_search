@@ -12,5 +12,7 @@ test:
   database: one_cafe_search_test
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   url: <%= ENV["DATABASE_URL"] %>
