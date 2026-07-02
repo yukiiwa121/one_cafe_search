@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 # one_cafe_search
-わんちゃんと一緒に入れる飲食店紹介
 =======
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+# アプリ概要
+わんちゃんと一緒に入れる飲食店を紹介する掲示板アプリです。
+基礎ステップRails①までの学習内容をもとに作成しています。
+学習が進むにつれアップグレードさせていこうと思ってます。
 
 * Ruby version
 
