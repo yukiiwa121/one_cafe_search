@@ -1,4 +1,4 @@
-# one_cafe_search
+# one_cafe_search(わんカフェサーチ)
 
 #公開URL
 https://one-cafe-search.onrender.com/
